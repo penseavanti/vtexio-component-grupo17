@@ -1,0 +1,1 @@
+# vtexio-component-grupo17
