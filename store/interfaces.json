@@ -1,0 +1,6 @@
+{
+    "audio": {
+        "component": "Audio",
+        "render": "client"
+    }
+}
