@@ -1,6 +1,5 @@
 import React from 'react';
 import Speech from 'react-speech';
-import styled from 'styled-components'
 
 //vtex setup --typings
 import { useProduct } from 'vtex.product-context'
