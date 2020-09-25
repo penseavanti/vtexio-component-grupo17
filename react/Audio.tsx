@@ -1,6 +1,9 @@
 import React from 'react';
-// import * as Speech from 'react-speech';
-import useProduct from 'vtex.product-context/useProduct'
+import Speech from 'react-speech';
+import styled from 'styled-components'
+
+//vtex setup --typings
+import { useProduct } from 'vtex.product-context'
 import { useCssHandles } from 'vtex.css-handles';
 
 const CSS_HANDLES = ['audio']
@@ -9,14 +12,15 @@ const Audio: StorefrontFunctionComponent = () => {
 
   const handles = useCssHandles(CSS_HANDLES)
 
-  const { product } = useProduct()
+  const { product } = useProduct() || { }
 
-  console.log(product)
+  // if(!product) return null
 
   return (
     <div className={`${handles.audio}`}>
-      {/* <Speech text="Welcome to react speech" />,
-      document.getElementById('node') */}
+      {
+        product?.description && <Speech text={product.description} />
+      }
     </div>
   )
 }
